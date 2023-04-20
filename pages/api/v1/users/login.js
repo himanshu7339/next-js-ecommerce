@@ -1,6 +1,5 @@
 import { connectDB } from "@/utils/Mongodb";
 import { User } from "@/models/userModel";
-import { ErrorHandler } from "@/utils/error";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { serialize } from "cookie";
@@ -47,6 +46,6 @@ export default async function handler(req, res) {
     )
     .json({
       success: true,
-      message: "Login Successfully",
+      message: `Welcome ${user.firstName} ${user.lastName}`,
     });
 }

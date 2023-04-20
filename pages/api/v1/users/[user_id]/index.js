@@ -2,8 +2,7 @@ import { User } from "@/models/userModel";
 import { connectDB } from "@/utils/Mongodb";
 
 export default async function handler(req, res) {
-
-    // Get single Users --- Admin
+  // Get single Users --- Admin
   if (req.method === "GET") {
     try {
       await connectDB();
