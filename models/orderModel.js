@@ -71,7 +71,7 @@ const orderSchema = new mongoose.Schema({
   },
   paidAt: {
     type: Date,
-    required: true,
+    default: Date.now,
   },
   itemsPrice: {
     type: Number,
@@ -104,4 +104,5 @@ const orderSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
-export const Order = mongoose.model('Order',orderSchema)
+mongoose.models = {}
+export const Order = mongoose.model("Order", orderSchema);

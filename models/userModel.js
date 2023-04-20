@@ -17,9 +17,12 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
+    select:false,
     required: [true, "Please enter your password"],
-    maxLength: [8, "Password must should be 8 chracters"],
+    minLength: [8, "Password must should be 8 chracters"],
   },
 });
+
+mongoose.models = {}
 
 export const User = mongoose.model('User',userSchema)
