@@ -1,3 +1,4 @@
+import "../styles/Global.scss"
 export const metadata = {
   title: 'Next js Ecommerce',
   description: 'Ready Ecommerce with Next js',
