@@ -1,0 +1,43 @@
+@import "Color";
+
+.header {
+  background-color: $primeryColor;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  font-weight: 400;
+  font-size: 1rem;
+
+  .logo > h1 {
+    color: $secondryColor;
+  }
+
+  .navlinks {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+      color: $secondryColor;
+      text-decoration: none;
+
+      &:hover {
+        transition: 0.5s;
+        color: $forthColor;
+      }
+    }
+  }
+  .auth_links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: $secondryColor;
+    cursor: pointer;
+
+    p:hover {
+      transition: 0.5s;
+      color: white;
+    }
+  }
+}

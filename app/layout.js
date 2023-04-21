@@ -1,13 +1,24 @@
-import "../styles/Global.scss"
+import Header from "@/components/Header";
+// Import all scss file
+import "../styles/Global.scss";
+import "../styles/Header.scss";
+import "../styles/Top.scss";
+import Footer from "@/components/Footer";
+import Top from "@/components/Top";
 export const metadata = {
-  title: 'Next js Ecommerce',
-  description: 'Ready Ecommerce with Next js',
-}
- 
+  title: "Next js Ecommerce",
+  description: "Ready Ecommerce with Next js",
+};
+
 export default function RootLayout({ children }) {
- return (
+  return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Top/>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
-  )
+  );
 }
