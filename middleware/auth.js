@@ -1,15 +1,8 @@
-import { User } from "@/models/userModel";
 import { connectDB } from "@/utils/Mongodb";
 import jwt from "jsonwebtoken";
 import cookieParse from "cookie-parser";
-
-export default async function handler(req, res) {
-  if (req.method !== "GET") {
-    return res.status(500).json({
-      message: "Only GET Method is allowed",
-    });
-  }
-    // Connect Mongodb
+export const isAuthenticatedUser = (req, res, next) => {
+  // Connect Mongodb
   connectDB();
 
   // call cookie Parse for access cookie
@@ -25,15 +18,8 @@ export default async function handler(req, res) {
       message: "Login First",
     });
   }
-// decoded token
+  // decoded token
   const decoded = jwt.verify(token, process.env.JWT_SECRET);
-// store user id
+  // store user id
   const id = decoded._id;
-
-  const user = await User.findById(id);
-
-  res.status(200).json({
-    success: true,
-    user,
-  });
-}
+};

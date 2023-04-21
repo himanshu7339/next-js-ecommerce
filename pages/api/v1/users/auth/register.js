@@ -3,7 +3,6 @@ import { User } from "@/models/userModel";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { serialize } from "cookie";
-import { ErrorHandler } from "@/utils/error";
 
 export default async function handler(req, res) {
   //Connection with MongoDb
