@@ -7,10 +7,10 @@ export default async function handler(req, res) {
 
   if (req.method === "GET") {
     try {
-      const product = await Product.find();
+      const products = await Product.find();
       res.status(200).json({
         success: true,
-        product,
+        products,
       });
     } catch (error) {
       res.status(500).json({
